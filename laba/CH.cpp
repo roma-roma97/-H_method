@@ -300,10 +300,9 @@ inline std::vector<PPaint1> StartMethodBasic2(int n, PPaint1 p0, double control,
 		p.v2 = RK4_2(points[i - 1].xn, points[i - 1].v1, points[i - 1].v2, h, a, b);
 		xtmp = p.xn - h / 2.0;
 		p.v115 = RK4_1(points[i - 1].xn, points[i - 1].v1, points[i - 1].v2, h / 2.0);
-		p.v215 = RK4_2(points[i - 1].xn, points[i - 1].v1, points[i - 1].v2, h / 2.0, a, l);
+		p.v215 = RK4_2(points[i - 1].xn, points[i - 1].v1, points[i - 1].v2, h / 2.0, a, b);
 		p.v21 = RK4_1(xtmp, p.v115, p.v215, h / 2.0);
-		p.v22 = RK4_2(xtmp, p.v115, p.v215, h / 2.0, a, l);
-		//if (std::isnan(p.vn) || std::isnan(p.v15) || std::isnan(p.v2)) break;
+		p.v22 = RK4_2(xtmp, p.v115, p.v215, h / 2.0, a, b);
 		p.S = (max(abs(p.v21), abs(p.v22)) - max(abs(p.v1), abs(p.v2))) / 15.0;
 		if (abs(p.S) > control)
 		{

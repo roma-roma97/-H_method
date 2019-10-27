@@ -71,9 +71,10 @@ namespace Graph {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ num2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ h2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ X2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Vn2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ V12;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ V22;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ VV2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ V122;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ V222;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ S2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ER2;
 			 //
@@ -174,6 +175,11 @@ private: System::Windows::Forms::RadioButton^ radioButton4;
 private: System::Windows::Forms::RadioButton^ radioButton3;
 private: System::Windows::Forms::RadioButton^ radioButton6;
 private: System::Windows::Forms::RadioButton^ radioButton5;
+private: System::Windows::Forms::Label^ label36;
+private: System::Windows::Forms::TextBox^ textBox36;
+private: System::Windows::Forms::Button^ button9;
+private: System::Windows::Forms::Button^ button8;
+private: System::Windows::Forms::Button^ button7;
 
 
 
@@ -230,9 +236,10 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->num2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->h2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->X2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Vn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->V12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->V22 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->VV2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->V122 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->V222 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->S2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->ER2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -247,6 +254,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
@@ -266,6 +274,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
@@ -296,12 +305,17 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->radioButton6 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
 			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox35 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox34 = (gcnew System::Windows::Forms::TextBox());
 			this->label35 = (gcnew System::Windows::Forms::Label());
 			this->label34 = (gcnew System::Windows::Forms::Label());
 			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
+			this->label36 = (gcnew System::Windows::Forms::Label());
+			this->textBox36 = (gcnew System::Windows::Forms::TextBox());
 			this->label32 = (gcnew System::Windows::Forms::Label());
 			this->textBox32 = (gcnew System::Windows::Forms::TextBox());
 			this->label33 = (gcnew System::Windows::Forms::Label());
@@ -328,8 +342,6 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton6 = (gcnew System::Windows::Forms::RadioButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
@@ -351,9 +363,12 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			// 
 			// zedGraphControl1
 			// 
-			this->zedGraphControl1->Location = System::Drawing::Point(812, 212);
+			this->zedGraphControl1->Location = System::Drawing::Point(616, 231);
 			this->zedGraphControl1->Margin = System::Windows::Forms::Padding(4);
 			this->zedGraphControl1->Name = L"zedGraphControl1";
+			this->zedGraphControl1->GraphPane->Title->Text = "График";
+			this->zedGraphControl1->GraphPane->XAxis->Title->Text = "X";
+			this->zedGraphControl1->GraphPane->YAxis->Title->Text = "V";
 			this->zedGraphControl1->ScrollGrace = 0;
 			this->zedGraphControl1->ScrollMaxX = 0;
 			this->zedGraphControl1->ScrollMaxY = 0;
@@ -361,14 +376,17 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->zedGraphControl1->ScrollMinX = 0;
 			this->zedGraphControl1->ScrollMinY = 0;
 			this->zedGraphControl1->ScrollMinY2 = 0;
-			this->zedGraphControl1->Size = System::Drawing::Size(685, 570);
+			this->zedGraphControl1->Size = System::Drawing::Size(881, 551);
 			this->zedGraphControl1->TabIndex = 0;
 			this->zedGraphControl1->Load += gcnew System::EventHandler(this, &MyForm::zedGraphControl1_Load);
 			// 
 			// zedGraphControl2
 			// 
-			this->zedGraphControl2->Location = System::Drawing::Point(604, 213);
+			this->zedGraphControl2->Location = System::Drawing::Point(604, 235);
 			this->zedGraphControl2->Name = L"zedGraphControl2";
+			this->zedGraphControl2->GraphPane->Title->Text = "График";
+			this->zedGraphControl2->GraphPane->XAxis->Title->Text = "X";
+			this->zedGraphControl2->GraphPane->YAxis->Title->Text = "V";
 			this->zedGraphControl2->ScrollGrace = 0;
 			this->zedGraphControl2->ScrollMaxX = 0;
 			this->zedGraphControl2->ScrollMaxY = 0;
@@ -376,7 +394,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->zedGraphControl2->ScrollMinX = 0;
 			this->zedGraphControl2->ScrollMinY = 0;
 			this->zedGraphControl2->ScrollMinY2 = 0;
-			this->zedGraphControl2->Size = System::Drawing::Size(887, 579);
+			this->zedGraphControl2->Size = System::Drawing::Size(887, 557);
 			this->zedGraphControl2->TabIndex = 1;
 			this->zedGraphControl2->Load += gcnew System::EventHandler(this, &MyForm::zedGraphControl2_Load);
 			// 
@@ -384,6 +402,9 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			// 
 			this->zedGraphControl3->Location = System::Drawing::Point(593, 15);
 			this->zedGraphControl3->Name = L"zedGraphControl3";
+			this->zedGraphControl3->GraphPane->Title->Text = "График";
+			this->zedGraphControl3->GraphPane->XAxis->Title->Text = "X";
+			this->zedGraphControl3->GraphPane->YAxis->Title->Text = "V1";
 			this->zedGraphControl3->ScrollGrace = 0;
 			this->zedGraphControl3->ScrollMaxX = 0;
 			this->zedGraphControl3->ScrollMaxY = 0;
@@ -399,6 +420,9 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			// 
 			this->zedGraphControl4->Location = System::Drawing::Point(1073, 15);
 			this->zedGraphControl4->Name = L"zedGraphControl4";
+			this->zedGraphControl4->GraphPane->Title->Text = "График";
+			this->zedGraphControl4->GraphPane->XAxis->Title->Text = "X";
+			this->zedGraphControl4->GraphPane->YAxis->Title->Text = "V2";
 			this->zedGraphControl4->ScrollGrace = 0;
 			this->zedGraphControl4->ScrollMaxX = 0;
 			this->zedGraphControl4->ScrollMaxY = 0;
@@ -414,6 +438,9 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			// 
 			this->zedGraphControl5->Location = System::Drawing::Point(593, 352);
 			this->zedGraphControl5->Name = L"zedGraphControl5";
+			this->zedGraphControl5->GraphPane->Title->Text = "График";
+			this->zedGraphControl5->GraphPane->XAxis->Title->Text = "V1";
+			this->zedGraphControl5->GraphPane->YAxis->Title->Text = "V2";
 			this->zedGraphControl5->ScrollGrace = 0;
 			this->zedGraphControl5->ScrollMaxX = 0;
 			this->zedGraphControl5->ScrollMaxY = 0;
@@ -423,6 +450,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->zedGraphControl5->ScrollMinY2 = 0;
 			this->zedGraphControl5->Size = System::Drawing::Size(906, 443);
 			this->zedGraphControl5->TabIndex = 1;
+			this->zedGraphControl5->Load += gcnew System::EventHandler(this, &MyForm::ZedGraphControl5_Load);
 			// 
 			// button1
 			// 
@@ -441,11 +469,11 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 				this->num, this->h,
 					this->X, this->Vn, this->U, this->V2, this->VV, this->S, this->E, this->ER
 			});
-			this->dataGridView1->Location = System::Drawing::Point(16, 226);
+			this->dataGridView1->Location = System::Drawing::Point(16, 231);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(744, 570);
+			this->dataGridView1->Size = System::Drawing::Size(594, 565);
 			this->dataGridView1->TabIndex = 14;
 			// 
 			// num
@@ -535,10 +563,10 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 				this->num1, this->h1,
 					this->X1, this->Vn1, this->V21, this->VV1, this->S1, this->ER1
 			});
-			this->dataGridView2->Location = System::Drawing::Point(5, 213);
+			this->dataGridView2->Location = System::Drawing::Point(5, 235);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
-			this->dataGridView2->Size = System::Drawing::Size(592, 579);
+			this->dataGridView2->Size = System::Drawing::Size(592, 557);
 			this->dataGridView2->TabIndex = 2;
 			// 
 			// num1
@@ -608,9 +636,9 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			// dataGridView3
 			// 
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView3->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
+			this->dataGridView3->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(9) {
 				this->num2, this->h2,
-					this->X2, this->Vn2, this->V22, this->VV2, this->S2, this->ER2
+					this->X2, this->V12, this->V22, this->V122, this->V222, this->S2, this->ER2
 			});
 			this->dataGridView3->Location = System::Drawing::Point(17, 284);
 			this->dataGridView3->Name = L"dataGridView3";
@@ -642,13 +670,13 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->X2->ReadOnly = true;
 			this->X2->Width = 50;
 			// 
-			// Vn2
+			// V12
 			// 
-			this->Vn2->HeaderText = L"Vn2";
-			this->Vn2->MinimumWidth = 6;
-			this->Vn2->Name = L"Vn2";
-			this->Vn2->ReadOnly = true;
-			this->Vn2->Width = 125;
+			this->V12->HeaderText = L"V12";
+			this->V12->MinimumWidth = 6;
+			this->V12->Name = L"V12";
+			this->V12->ReadOnly = true;
+			this->V12->Width = 125;
 			// 
 			// V22
 			// 
@@ -658,13 +686,21 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->V22->ReadOnly = true;
 			this->V22->Width = 125;
 			// 
-			// VV2
+			// V122
 			// 
-			this->VV2->HeaderText = L"VV2";
-			this->VV2->MinimumWidth = 6;
-			this->VV2->Name = L"VV2";
-			this->VV2->ReadOnly = true;
-			this->VV2->Width = 125;
+			this->V122->HeaderText = L"VV2";
+			this->V122->MinimumWidth = 6;
+			this->V122->Name = L"V122";
+			this->V122->ReadOnly = true;
+			this->V122->Width = 125;
+			// 
+			// V222
+			// 
+			this->V222->HeaderText = L"V222";
+			this->V222->MinimumWidth = 6;
+			this->V222->Name = L"V222";
+			this->V222->ReadOnly = true;
+			this->V222->Width = 125;
 			// 
 			// S2
 			// 
@@ -727,7 +763,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(16, 59);
+			this->button2->Location = System::Drawing::Point(16, 97);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(142, 29);
 			this->button2->TabIndex = 9;
@@ -784,6 +820,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->button9);
 			this->tabPage1->Controls->Add(this->radioButton2);
 			this->tabPage1->Controls->Add(this->radioButton1);
 			this->tabPage1->Controls->Add(this->groupBox3);
@@ -801,6 +838,16 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Тестовая задача";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// button9
+			// 
+			this->button9->Location = System::Drawing::Point(16, 57);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(142, 29);
+			this->button9->TabIndex = 21;
+			this->button9->Text = L"Очистить графики\r\n";
+			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &MyForm::Button9_Click);
 			// 
 			// radioButton2
 			// 
@@ -835,7 +882,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->groupBox3->Controls->Add(this->label8);
 			this->groupBox3->Controls->Add(this->textBox9);
 			this->groupBox3->Controls->Add(this->textBox8);
-			this->groupBox3->Location = System::Drawing::Point(16, 103);
+			this->groupBox3->Location = System::Drawing::Point(16, 146);
 			this->groupBox3->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Padding = System::Windows::Forms::Padding(2);
@@ -1008,6 +1055,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->Controls->Add(this->button8);
 			this->tabPage2->Controls->Add(this->radioButton4);
 			this->tabPage2->Controls->Add(this->radioButton3);
 			this->tabPage2->Controls->Add(this->groupBox5);
@@ -1025,6 +1073,16 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Основная задача №1";
 			this->tabPage2->UseVisualStyleBackColor = true;
+			// 
+			// button8
+			// 
+			this->button8->Location = System::Drawing::Point(15, 54);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(142, 29);
+			this->button8->TabIndex = 25;
+			this->button8->Text = L"Очистить график\r\n";
+			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm::Button8_Click);
 			// 
 			// radioButton4
 			// 
@@ -1168,7 +1226,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->groupBox4->Controls->Add(this->label17);
 			this->groupBox4->Controls->Add(this->textBox14);
 			this->groupBox4->Controls->Add(this->textBox15);
-			this->groupBox4->Location = System::Drawing::Point(15, 101);
+			this->groupBox4->Location = System::Drawing::Point(15, 144);
 			this->groupBox4->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox4->Name = L"groupBox4";
 			this->groupBox4->Padding = System::Windows::Forms::Padding(2);
@@ -1255,7 +1313,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(15, 58);
+			this->button3->Location = System::Drawing::Point(15, 102);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(142, 29);
 			this->button3->TabIndex = 20;
@@ -1329,6 +1387,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->Controls->Add(this->button7);
 			this->tabPage3->Controls->Add(this->radioButton6);
 			this->tabPage3->Controls->Add(this->radioButton5);
 			this->tabPage3->Controls->Add(this->groupBox10);
@@ -1350,6 +1409,38 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->tabPage3->Text = L"Основная задача №2";
 			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(17, 53);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(142, 29);
+			this->button7->TabIndex = 28;
+			this->button7->Text = L"Очистить графики";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::Button7_Click);
+			// 
+			// radioButton6
+			// 
+			this->radioButton6->AutoSize = true;
+			this->radioButton6->Location = System::Drawing::Point(186, 221);
+			this->radioButton6->Name = L"radioButton6";
+			this->radioButton6->Size = System::Drawing::Size(104, 17);
+			this->radioButton6->TabIndex = 27;
+			this->radioButton6->Text = L"Постояный шаг";
+			this->radioButton6->UseVisualStyleBackColor = true;
+			// 
+			// radioButton5
+			// 
+			this->radioButton5->AutoSize = true;
+			this->radioButton5->Checked = true;
+			this->radioButton5->Location = System::Drawing::Point(186, 197);
+			this->radioButton5->Name = L"radioButton5";
+			this->radioButton5->Size = System::Drawing::Size(113, 17);
+			this->radioButton5->TabIndex = 26;
+			this->radioButton5->TabStop = true;
+			this->radioButton5->Text = L"Переменный шаг";
+			this->radioButton5->UseVisualStyleBackColor = true;
+			// 
 			// groupBox10
 			// 
 			this->groupBox10->BackColor = System::Drawing::SystemColors::ButtonFace;
@@ -1357,7 +1448,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->groupBox10->Controls->Add(this->textBox34);
 			this->groupBox10->Controls->Add(this->label35);
 			this->groupBox10->Controls->Add(this->label34);
-			this->groupBox10->Location = System::Drawing::Point(416, 108);
+			this->groupBox10->Location = System::Drawing::Point(416, 133);
 			this->groupBox10->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox10->Name = L"groupBox10";
 			this->groupBox10->Padding = System::Windows::Forms::Padding(2);
@@ -1407,6 +1498,8 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			// groupBox9
 			// 
 			this->groupBox9->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->groupBox9->Controls->Add(this->label36);
+			this->groupBox9->Controls->Add(this->textBox36);
 			this->groupBox9->Controls->Add(this->label32);
 			this->groupBox9->Controls->Add(this->textBox32);
 			this->groupBox9->Controls->Add(this->label33);
@@ -1415,10 +1508,29 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->groupBox9->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox9->Name = L"groupBox9";
 			this->groupBox9->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox9->Size = System::Drawing::Size(140, 76);
+			this->groupBox9->Size = System::Drawing::Size(140, 107);
 			this->groupBox9->TabIndex = 24;
 			this->groupBox9->TabStop = false;
 			this->groupBox9->Text = L"Начальные условия";
+			// 
+			// label36
+			// 
+			this->label36->AutoSize = true;
+			this->label36->Location = System::Drawing::Point(24, 81);
+			this->label36->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label36->Name = L"label36";
+			this->label36->Size = System::Drawing::Size(21, 13);
+			this->label36->TabIndex = 20;
+			this->label36->Text = L"U2";
+			// 
+			// textBox36
+			// 
+			this->textBox36->Location = System::Drawing::Point(47, 78);
+			this->textBox36->Margin = System::Windows::Forms::Padding(2);
+			this->textBox36->Name = L"textBox36";
+			this->textBox36->Size = System::Drawing::Size(42, 20);
+			this->textBox36->TabIndex = 19;
+			this->textBox36->Text = L"1";
 			// 
 			// label32
 			// 
@@ -1428,7 +1540,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->label32->Name = L"label32";
 			this->label32->Size = System::Drawing::Size(21, 13);
 			this->label32->TabIndex = 18;
-			this->label32->Text = L"Uo";
+			this->label32->Text = L"U1";
 			// 
 			// textBox32
 			// 
@@ -1437,6 +1549,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->textBox32->Name = L"textBox32";
 			this->textBox32->Size = System::Drawing::Size(42, 20);
 			this->textBox32->TabIndex = 17;
+			this->textBox32->Text = L"1";
 			// 
 			// label33
 			// 
@@ -1455,6 +1568,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->textBox33->Name = L"textBox33";
 			this->textBox33->Size = System::Drawing::Size(42, 20);
 			this->textBox33->TabIndex = 15;
+			this->textBox33->Text = L"0";
 			// 
 			// groupBox8
 			// 
@@ -1495,7 +1609,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->textBox27->Name = L"textBox27";
 			this->textBox27->Size = System::Drawing::Size(49, 20);
 			this->textBox27->TabIndex = 4;
-			this->textBox27->Text = L"0";
+			this->textBox27->Text = L"0,1";
 			// 
 			// textBox28
 			// 
@@ -1546,7 +1660,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->textBox30->Name = L"textBox30";
 			this->textBox30->Size = System::Drawing::Size(50, 20);
 			this->textBox30->TabIndex = 11;
-			this->textBox30->Text = L"0";
+			this->textBox30->Text = L"100";
 			// 
 			// textBox31
 			// 
@@ -1554,7 +1668,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->textBox31->Name = L"textBox31";
 			this->textBox31->Size = System::Drawing::Size(49, 20);
 			this->textBox31->TabIndex = 13;
-			this->textBox31->Text = L"1";
+			this->textBox31->Text = L"0,001";
 			// 
 			// label31
 			// 
@@ -1592,6 +1706,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->textBox23->Name = L"textBox23";
 			this->textBox23->Size = System::Drawing::Size(30, 20);
 			this->textBox23->TabIndex = 7;
+			this->textBox23->Text = L"1";
 			// 
 			// label23
 			// 
@@ -1610,6 +1725,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->textBox24->Name = L"textBox24";
 			this->textBox24->Size = System::Drawing::Size(24, 20);
 			this->textBox24->TabIndex = 5;
+			this->textBox24->Text = L"0";
 			// 
 			// label24
 			// 
@@ -1648,6 +1764,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->textBox25->Name = L"textBox25";
 			this->textBox25->Size = System::Drawing::Size(29, 20);
 			this->textBox25->TabIndex = 1;
+			this->textBox25->Text = L"1";
 			// 
 			// textBox26
 			// 
@@ -1656,6 +1773,7 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->textBox26->Name = L"textBox26";
 			this->textBox26->Size = System::Drawing::Size(24, 20);
 			this->textBox26->TabIndex = 0;
+			this->textBox26->Text = L"0";
 			// 
 			// button6
 			// 
@@ -1673,31 +1791,9 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(142, 29);
 			this->button4->TabIndex = 20;
-			this->button4->Text = L"Запуск";
+			this->button4->Text = L"Вычислить\r\n";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::Button4_Click);
-			// 
-			// radioButton5
-			// 
-			this->radioButton5->AutoSize = true;
-			this->radioButton5->Location = System::Drawing::Point(186, 197);
-			this->radioButton5->Name = L"radioButton5";
-			this->radioButton5->Size = System::Drawing::Size(85, 17);
-			this->radioButton5->TabIndex = 26;
-			this->radioButton5->TabStop = true;
-			this->radioButton5->Text = L"radioButton5";
-			this->radioButton5->UseVisualStyleBackColor = true;
-			// 
-			// radioButton6
-			// 
-			this->radioButton6->AutoSize = true;
-			this->radioButton6->Location = System::Drawing::Point(186, 221);
-			this->radioButton6->Name = L"radioButton6";
-			this->radioButton6->Size = System::Drawing::Size(85, 17);
-			this->radioButton6->TabIndex = 27;
-			this->radioButton6->TabStop = true;
-			this->radioButton6->Text = L"radioButton6";
-			this->radioButton6->UseVisualStyleBackColor = true;
 			// 
 			// MyForm
 			// 
@@ -1854,17 +1950,19 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		GraphPane^ panel = zedGraphControl1->GraphPane;
-		double xmin = Convert::ToDouble(textBox5->Text);
-		double xmax = Convert::ToDouble(textBox4->Text);
+		double xmin = Convert::ToDouble(textBox8->Text);
+		double xmax = Convert::ToDouble(textBox9->Text);
+		double ymin = Convert::ToDouble(textBox10->Text);
+		double ymax = Convert::ToDouble(textBox11->Text);
+		
 		// Устанавливаем интересующий нас интервал по оси X
 		panel->XAxis->Scale->Min = xmin;
 		panel->XAxis->Scale->Max = xmax;
+		panel->YAxis->Scale->Min = ymin;
+		panel->YAxis->Scale->Max = ymax;
 
-		// Вызываем метод AxisChange (), чтобы обновить данные об осях. 
-		// В противном случае на рисунке будет показана только часть графика, 
-		// которая умещается в интервалы по осям, установленные по умолчанию
 		zedGraphControl1->AxisChange();
-		// Обновляем график
+		
 		zedGraphControl1->Invalidate();
 
 	}
@@ -1874,8 +1972,52 @@ private: System::Windows::Forms::RadioButton^ radioButton5;
 private: System::Void TabControl1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void Button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	GraphPane^ panel = zedGraphControl2->GraphPane;
+	double xmin = Convert::ToDouble(textBox15->Text);
+	double xmax = Convert::ToDouble(textBox14->Text);
+	double ymin = Convert::ToDouble(textBox13->Text);
+	double ymax = Convert::ToDouble(textBox12->Text);
+
+	// Устанавливаем интересующий нас интервал по оси X
+	panel->XAxis->Scale->Min = xmin;
+	panel->XAxis->Scale->Max = xmax;
+	panel->YAxis->Scale->Min = ymin;
+	panel->YAxis->Scale->Max = ymax;
+
+	zedGraphControl2->AxisChange();
+
+	zedGraphControl2->Invalidate();
 }
 private: System::Void Button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	GraphPane^ panel = zedGraphControl2->GraphPane;
+	GraphPane^ panel2 = zedGraphControl2->GraphPane;
+	GraphPane^ panel3 = zedGraphControl2->GraphPane;
+	double xmin = Convert::ToDouble(textBox26->Text);
+	double xmax = Convert::ToDouble(textBox25->Text);
+	double ymin = Convert::ToDouble(textBox24->Text);
+	double ymax = Convert::ToDouble(textBox23->Text);
+
+	// Устанавливаем интересующий нас интервал по оси X
+	panel->XAxis->Scale->Min = xmin;
+	panel->XAxis->Scale->Max = xmax;
+	panel->YAxis->Scale->Min = ymin;
+	panel->YAxis->Scale->Max = ymax;
+	panel->XAxis->Scale->Min = xmin;
+	panel->XAxis->Scale->Max = xmax;
+	panel->YAxis->Scale->Min = ymin;
+	panel->YAxis->Scale->Max = ymax;
+	panel->XAxis->Scale->Min = xmin;
+	panel->XAxis->Scale->Max = xmax;
+	panel->YAxis->Scale->Min = ymin;
+	panel->YAxis->Scale->Max = ymax;
+
+	zedGraphControl3->AxisChange();
+	zedGraphControl4->AxisChange();
+	zedGraphControl5->AxisChange();
+
+	zedGraphControl3->Invalidate();
+	zedGraphControl4->Invalidate();
+	zedGraphControl5->Invalidate();
 }
 private: System::Void Button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	GraphPane^ panel = zedGraphControl2->GraphPane;
@@ -1970,50 +2112,68 @@ private: System::Void Button5_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void Button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	GraphPane^ panel = zedGraphControl3->GraphPane;
-	GraphPane^ panel = zedGraphControl4->GraphPane;
-	GraphPane^ panel = zedGraphControl5->GraphPane;
+	GraphPane^ panel1 = zedGraphControl4->GraphPane;
+	GraphPane^ panel2 = zedGraphControl5->GraphPane;
 
 	PointPairList^ f1 = gcnew ZedGraph::PointPairList();
-	//PointPairList^ f2 = gcnew ZedGraph::PointPairList();
+	PointPairList^ f2 = gcnew ZedGraph::PointPairList();
+	PointPairList^ f3 = gcnew ZedGraph::PointPairList();
 
-	double h = Convert::ToDouble(textBox16->Text);
-	std::vector<PPaint> graph;
-	PPaint p0;
-	double max = Convert::ToDouble(textBox18->Text);
-	p0.xn = Convert::ToDouble(textBox20->Text);
-	p0.vn = Convert::ToDouble(textBox19->Text);
+	double h = Convert::ToDouble(textBox27->Text);
+	
+	std::vector<PPaint1> graph;
+	
+	PPaint1 p0;
+	double max = Convert::ToDouble(textBox29->Text);
+	p0.xn = Convert::ToDouble(textBox33->Text);
+	p0.v1 = Convert::ToDouble(textBox32->Text);
+	p0.v2 = Convert::ToDouble(textBox36->Text);
 	p0.h = h;
-	double control = Convert::ToDouble(textBox4->Text);
-	double range = Convert::ToDouble(textBox3->Text);
-	int n = Convert::ToInt32(textBox5->Text);
+	double control = Convert::ToDouble(textBox31->Text);
+	double range = Convert::ToDouble(textBox28->Text);
+	double a = Convert::ToDouble(textBox34->Text);
+	double b = Convert::ToDouble(textBox35->Text);
+	int n = Convert::ToInt32(textBox30->Text);
 
-	if (radioButton3->Checked)
-		graph = StartMethodBasic1(n, p0, control, range, max);
+	if (radioButton5->Checked)
+		graph = StartMethodBasic2(n, p0, control, range, max,a,b);
 	else
-		graph = Basic(n, p0, control, range, max);
+		graph = Basic2(n, p0, control, range, max,a,b);
 	for (int j = 0; j < graph.size(); j++)
 	{
-		f1->Add(graph[j].xn, graph[j].vn);
+		f1->Add(graph[j].xn, graph[j].v1);
+		f2->Add(graph[j].xn, graph[j].v2);
+		f3->Add(graph[j].v2, graph[j].v1);
 		//f2->Add(graph[j].xn, graph[j].u);
 	}
-	dataGridView2->Rows->Clear();
+	dataGridView3->Rows->Clear();
 	for (int j = 0; j < graph.size(); j++)
 	{
 		//Печать в таблицу
-		dataGridView2->Rows->Add();
-		dataGridView2->Rows[j]->Cells[0]->Value = graph[j].num;
-		dataGridView2->Rows[j]->Cells[1]->Value = graph[j].h;
-		dataGridView2->Rows[j]->Cells[2]->Value = graph[j].xn;
-		dataGridView2->Rows[j]->Cells[3]->Value = graph[j].vn;
-		dataGridView2->Rows[j]->Cells[4]->Value = graph[j].v2;
-		dataGridView2->Rows[j]->Cells[5]->Value = graph[j].v2 - graph[j].vn;
-		dataGridView2->Rows[j]->Cells[6]->Value = graph[j].S;
-		dataGridView2->Rows[j]->Cells[7]->Value = graph[j].S * 16;
+		dataGridView3->Rows->Add();
+		dataGridView3->Rows[j]->Cells[0]->Value = graph[j].num;
+		dataGridView3->Rows[j]->Cells[1]->Value = graph[j].h;
+		dataGridView3->Rows[j]->Cells[2]->Value = graph[j].xn;
+		dataGridView3->Rows[j]->Cells[3]->Value = graph[j].v1;
+		dataGridView3->Rows[j]->Cells[4]->Value = graph[j].v2;
+		dataGridView3->Rows[j]->Cells[5]->Value = graph[j].v21;
+		dataGridView3->Rows[j]->Cells[6]->Value = graph[j].v22;
+		dataGridView3->Rows[j]->Cells[7]->Value = graph[j].S;
+		dataGridView3->Rows[j]->Cells[8]->Value = graph[j].S * 16;
 	}
-	if (radioButton3->Checked)
-		LineItem Curve1 = panel->AddCurve("Численное решение с переменным шагом", f1, Color::Green, SymbolType::Plus);
+	if (radioButton5->Checked)
+	{
+		LineItem Curve = panel->AddCurve("Численное решение с переменным шагом", f1, Color::Green, SymbolType::Plus);
+		LineItem Curve1 = panel1->AddCurve("Численное решение с переменным шагом", f2, Color::Green, SymbolType::Plus);
+		LineItem Curve2 = panel2->AddCurve("Численное решение с переменным шагом", f3, Color::Green, SymbolType::Plus);
+	}
 	else
-		LineItem Curve1 = panel->AddCurve("Численное решение с постоянным шагом", f1, Color::Black, SymbolType::Plus);
+	{
+		LineItem Curve = panel->AddCurve("Численное решение с постоянным шагом", f1, Color::Black, SymbolType::Plus);
+		LineItem Curve1 = panel1->AddCurve("Численное решение с постоянным шагом", f2, Color::Black, SymbolType::Plus);
+		LineItem Curve2 = panel2->AddCurve("Численное решение с постоянным шагом", f3, Color::Black, SymbolType::Plus);
+	}
+		//// Заполнение справки
 	//// Заполнение справки
 	//int sub = 0;
 	//int mov = 0;
@@ -2048,18 +2208,55 @@ private: System::Void Button4_Click(System::Object^ sender, System::EventArgs^ e
 
 	panel->XAxis->Scale->Min = xmin;
 	panel->XAxis->Scale->Max = xmax;
+	panel1->XAxis->Scale->Min = xmin;
+	panel1->XAxis->Scale->Max = xmax;
+	panel2->XAxis->Scale->Min = xmin;
+	panel2->XAxis->Scale->Max = xmax;
 
 	// Устанавливаем интересующий нас интервал по оси Y
 	panel->YAxis->Scale->Min = ymin;
 	panel->YAxis->Scale->Max = ymax;
+	panel1->YAxis->Scale->Min = ymin;
+	panel1->YAxis->Scale->Max = ymax;
+	panel2->YAxis->Scale->Min = ymin;
+	panel2->YAxis->Scale->Max = ymax;
 
 
 	// Вызываем метод AxisChange (), чтобы обновить данные об осях. 
 	// В противном случае на рисунке будет показана только часть графика, 
 	// которая умещается в интервалы по осям, установленные по умолчанию
-	zedGraphControl2->AxisChange();
+	zedGraphControl3->AxisChange();
+	zedGraphControl4->AxisChange();
+	zedGraphControl5->AxisChange();
 	// Обновляем график
+	zedGraphControl3->Invalidate();
+	zedGraphControl4->Invalidate();
+	zedGraphControl5->Invalidate();
+}
+private: System::Void Button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	zedGraphControl3->GraphPane->CurveList->Clear();
+	zedGraphControl4->GraphPane->CurveList->Clear();
+	zedGraphControl5->GraphPane->CurveList->Clear();
+	zedGraphControl3->AxisChange();
+	zedGraphControl4->AxisChange();
+	zedGraphControl5->AxisChange();
+	zedGraphControl3->Invalidate();
+	zedGraphControl4->Invalidate();
+	zedGraphControl5->Invalidate();
+}
+private: System::Void Button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	zedGraphControl2->GraphPane->CurveList->Clear();
+	zedGraphControl2->AxisChange();
 	zedGraphControl2->Invalidate();
+}
+private: System::Void Button9_Click(System::Object^ sender, System::EventArgs^ e) {
+	zedGraphControl1->GraphPane->CurveList->Clear();
+	zedGraphControl1->AxisChange();
+	zedGraphControl1->Invalidate();
+}
+		 
+private: System::Void ZedGraphControl5_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
