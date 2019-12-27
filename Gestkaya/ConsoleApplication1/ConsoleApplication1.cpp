@@ -27,7 +27,7 @@ int main()
 	while (flag)
 	{
 		maxv = 0;
-		cout << "Введите шаг: ";
+		cout << "Введите начальный шаг: ";
 		cin >> (h);
 		cout << endl;
 		cout << "Введите количество шагов: ";

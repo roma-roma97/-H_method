@@ -9,7 +9,7 @@ struct PPaint
 {
 	int num;
 	double xn, v1, v2; //
-	double v22, v21, v115, v215; // v удвоенное и v+1/2
+	double v22, v21, v115, v215; // v пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ v+1/2
 	double S, er;
 	double h,le;
 	int sub;
@@ -140,13 +140,13 @@ inline std::vector<PPaint> StartMethodBasic(int n, PPaint p0, double a, double l
 		p.v21 = RK4(xtmp, p.v115, p.v215, h / 2.0,a,l)[0];
 		p.v22 = RK4(xtmp, p.v115, p.v215, h / 2.0, a, l)[1];
 		p.S = (sqrt(p.v21*p.v21+ p.v22*p.v22) - sqrt(p.v1*p.v1+p.v2*p.v2)) / 15.0;
-		if (p.v1 - points[i - 1].v1 < 0.0001)
-		{
-			p.v1 += l - length;
-			p.le += l - length;
-			points.push_back(p);
-			break;
-		}
+		// if (p.v1 - points[i - 1].v1 < 0.0001)
+		// {
+		// 	p.v1 += l - length;
+		// 	p.le += l - length;
+		// 	points.push_back(p);
+		// 	break;
+		// }
 
 		if (abs(p.S) > control)
 		{
